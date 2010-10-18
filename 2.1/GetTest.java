@@ -20,10 +20,12 @@ public class GetTest extends HttpServlet {
     {
         response.setContentType("text/plain");
         PrintWriter out = response.getWriter();
-        Enumeration e = request.getParameterNames();
-        out.println("hej");
+        Enumeration e = request.getParameterNames(); // ta emot parametrar som värdepar
+        out.println("Skriver ut parametrar:");
+
+        /* Skriv ut alla inkommna parametrar */
         while (e.hasMoreElements()) {
-            String name = (String)e.nextElement();
+            String name = (String) e.nextElement();
             String value = request.getParameter(name);
             out.println(name + " = " + value);
         }

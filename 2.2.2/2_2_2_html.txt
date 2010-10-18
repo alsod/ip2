@@ -1,0 +1,43 @@
+<html>
+	
+	<head>
+		<title>2.2.1</title>
+	</head>
+
+	<body>
+		<h1>Med Get</h1>
+		<form name="input" action="./2.2.1" method="get">
+			F&ouml;rnamn: <input type="text" name="fornamn" /><br />
+			Efternamn: <input type="text" name="efternamn" /><br />
+			Anv&auml;ndarnamn: <input type="text" name="anvandarnamn" /><br />
+			
+			Password: <input type="password" name="pwd" /><br />
+			
+			<input type="radio" name="kon" value="male" /> Man<br />
+			<input type="radio" name="kon" value="female" /> Kvinna<br />
+			
+			<input type="checkbox" name="sysselsattning" value="arbetar" /> Jag arbetar<br />
+			<input type="checkbox" name="sysselsattning" value="studerar" /> Jag studerar<br />
+			
+			<input type="submit" value="Submit" />
+		</form>
+		
+		<h1>Med Post</h1>
+		<form name="input" action="./2.2.1" method="post">
+			F&ouml;rnamn: <input type="text" name="fornamn" /><br />
+			Efternamn: <input type="text" name="efternamn" /><br />
+			Anv&auml;ndarnamn: <input type="text" name="anvandarnamn" /><br />
+			
+			Password: <input type="password" name="pwd" /><br />
+			
+			<input type="radio" name="kon" value="male" /> Man<br />
+			<input type="radio" name="kon" value="female" /> Kvinna<br />
+			
+			<input type="checkbox" name="sysselsattning" value="arbetar" /> Jag arbetar<br />
+			<input type="checkbox" name="sysselsattning" value="studerar" /> Jag studerar<br />
+			
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+
+</html>
