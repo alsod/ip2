@@ -72,8 +72,8 @@ public class account extends HttpServlet {
                 session.setAttribute("user", username);
                 session.setAttribute("validUser", "y");
                 session.setAttribute("loginError", "n");
-                session.setAttribute("showImages", "y");
-                gotoPage("/index.jsp", request, response);
+                session.setAttribute("action", "showimages");
+                gotoPage("/gallery", request, response);
 
             } else {
                 session.setAttribute("validUser", "n");
@@ -108,7 +108,6 @@ public class account extends HttpServlet {
             }
 
         }
-
         closeDBConnection(); // Stäng koppling till databas
     }
 
