@@ -13,7 +13,7 @@
         <div id="container">
             <div id="top"><h1>Logga in</h1></div>
             <div id="content">
-                <form method="get" action="./account">
+                <form method="post" action="./account">
 
                     <table>
 

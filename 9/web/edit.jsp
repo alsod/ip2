@@ -24,7 +24,7 @@
             <div id="top"><h1>&Auml;ndra bildinfo</h1></div>
             <div id="content">
                 <center><form method="get" action="./login" enctype="multipart/form-data" >
-
+                <input type="submit" name="radera" value="Radera bild">
                     <table>
 
                         <tr>
@@ -41,7 +41,7 @@
                     </table>
                     <br>
                     <input type="submit" name="andra" value="&Auml;ndra">
-                    <input type="submit" name="radera" value="Radera">
+                    
                 </form>
                 </center>
             </div>

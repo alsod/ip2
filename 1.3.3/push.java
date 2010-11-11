@@ -1,5 +1,7 @@
 
 import com.oreilly.servlet.MultipartResponse;
+import com.oreilly.servlet.ServletUtils;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -31,8 +33,9 @@ public class push extends HttpServlet {
         ServletOutputStream out = response.getOutputStream(); //
 
         MultipartResponse mres = new MultipartResponse(response);
-
+        
         for (int i = 10; i > 0; i--) {
+            out.flush();
             if (i % 3 == 1) {
                 mres.startResponse("text/plain");
                 out.println("count = " + i); // Skriv ut nedräknare
@@ -47,18 +50,22 @@ public class push extends HttpServlet {
                 out.println("<body>");
                 out.println("<h1>Count " + i + "</h1>");
                 out.println("</body>");
-                out.println("</html>");
+                out.println("</html>");   
                 mres.endResponse();
 
             } else {
-                mres.startResponse("text/plain");
-                out.println("count2 = " + i); // Skriv ut nedräknare
+                mres.startResponse("image/gif");
+                try {
+                    ServletUtils.returnFile(getServletContext().getRealPath("/") + "test.gif", out);
+                } catch (FileNotFoundException e) {
+                    throw new ServletException("Could not find file: " + e.getMessage());
+                }
                 mres.endResponse();
             }
 
 
             try {
-                Thread.sleep(1000); // Sov en stund
+                Thread.sleep(2000); // Sov en stund
             } catch (InterruptedException ex) {
                 Logger.getLogger(push.class.getName()).log(Level.SEVERE, null, ex);
             }
