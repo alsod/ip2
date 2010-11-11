@@ -1,0 +1,113 @@
+html, body 
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+img#bg 
+{	
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+#container
+{
+    position: relative;
+    width: 80%;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid gray;
+    line-height: 130%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+
+}
+
+#top
+{
+    padding-left: 50px;
+
+}
+
+#top h1
+{
+    padding: 0;
+    margin: 0;
+}
+
+
+#content
+{
+    padding: 50px;
+}
+
+#sectionBox
+{
+    float: left;
+    margin-right: 30px;
+    margin-top: 30px;
+    height: 200px;
+    width: 150px;
+    border: 2px dashed red;
+}
+
+#bigLinks
+{
+    text-align: center;
+}
+
+#images
+{    
+}
+
+#images img
+{
+    float: left;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+#images a img
+{
+    border: 5px solid black;
+}
+
+#images a:hover img
+{
+    border: 5px solid green;
+}
+
+#bigLinks a
+{
+    text-decoration: none;
+    margin-right: 50px;
+    color: green;
+}
+
+#bigLinks a:hover
+{
+    text-decoration: none;
+    margin-right: 50px;
+    color: brown;
+}
+
+#top h1
+{ 
+    font-size: 60px;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+
