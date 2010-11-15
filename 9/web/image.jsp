@@ -1,10 +1,15 @@
+<%@page import="gallery.GalleryImage"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 
-    <% String validUser = (String) session.getAttribute("validUser");
+    <%
+    ArrayList<GalleryImage> images = (ArrayList<GalleryImage>) session.getAttribute("images");
+    int id = Integer.parseInt((String) request.getParameter("id"));
+    String validUser = (String) session.getAttribute("validUser");
                 if (validUser != null && !validUser.equals("y")) {
     %>
     <head>
@@ -15,20 +20,20 @@
     </body>
     <%} else {%>
     <head>
-        <title>Bildnamn</title>
+        <title><%out.println(images.get(id).getFilename());%></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="css/image.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <img src="./images/bgimage3.jpg" alt="background image" id="bg" />
         <div id="container">
-            <div id="top"><h1>Bildnamn</h1></div>
+            <div id="top"><h1><%out.println(images.get(id).getFilename());%></h1></div>
             <div id="content">
-                <img alt="bild" src="images/bgimage.jpg" width = "1024px"/>
+                <img alt="bild" src="./images/<%out.println(images.get(id).getFilename());%>" width = "1024px"/>
 
                 <ul>
-                    <li>Namn</li>
-                    <li>Beskrivning</li>
+                    <li>Namn: <%out.println(images.get(id).getName());%></li>
+                    <li>Beskrivning: <%out.println(images.get(id).getDescription());%></li>
                 </ul>
             </div>
         </div>

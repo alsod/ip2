@@ -12,7 +12,7 @@
         <div id="container">
             <div id="top"><h1>Registrera konto</h1></div>
             <div id="content">
-                <form method="get" action="./account">
+                <form method="get" action="./gallery">
 
                     <center>
                         <table>

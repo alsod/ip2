@@ -8,7 +8,7 @@
                 if (validUser != null && !validUser.equals("y")) {
     %>
     <head>
-        <meta http-equiv="REFRESH" content="2;url=./login.jsp" />
+
     </head>
     <body>
         <p>Du är inte inloggad, du skickas nu till inloggningssidan.</p>
@@ -24,7 +24,7 @@
         <div id="container">
             <div id="top"><h1>L&auml;gg till bild</h1></div>
             <div id="content">
-                <center><form method="post" action="./gallery" enctype="multipart/form-data" >
+                <center><form method="post" action="./gallery?action=add" enctype="multipart/form-data" >
 
                         <table>
 

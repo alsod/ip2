@@ -1,10 +1,14 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="java.util.ArrayList,gallery.GalleryImage"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 
-    <% String validUser = (String) session.getAttribute("validUser");
+    <%
+                ArrayList<GalleryImage> images = (ArrayList<GalleryImage>) session.getAttribute("images");
+                String validUser = (String) session.getAttribute("validUser");
                 if (validUser != null && !validUser.equals("y")) {
     %>
     <head>
@@ -43,17 +47,14 @@
                 </div>
 
                 <div id="images">
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
-                    <a href="image.jsp"><img alt="image" src="images/bgimage.jpg" height="150" width="200" /></a>
+
+                    <%
+                    int i=0;
+                    for (GalleryImage image : images) {%>
+                    <a href="image.jsp?id=<%out.print(i);%>"><img alt="image" src="./images/<%out.print(image.getFilename());%>" height="150" width="200" /></a>
+
+                    <%i++;
+                    }%>
                 </div>
 
             </div>

@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% session.setAttribute("action", "showimages");%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -13,7 +14,7 @@
         <div id="container">
             <div id="top"><h1>Logga in</h1></div>
             <div id="content">
-                <form method="post" action="./account">
+                <form method="post" action="./gallery">
 
                     <table>
 
